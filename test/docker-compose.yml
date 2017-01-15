@@ -2,13 +2,13 @@ version: '2'
 
 services:
   zoneminder:
-    image: vidiben/zoneminder
+    build: ../containers/zoneminder
     environment:
       - "MYSQL_HOST=mariadb"
       - "MYSQL_DATABASE=zm"
       - "MYSQL_USER=zm"
-      - "MYSQL_USER=zm"
       - "MYSQL_PASSWORD=zm"
+      - "PHP_TZ=Europe/Paris"
 
   mariadb:
     image: mariadb
